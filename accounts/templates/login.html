@@ -1,0 +1,55 @@
+{% extends 'base.html' %}{% load bootstrap3 %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<style>
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-head {
+    color: white;
+    margin-bottom: 18%;
+  }
+
+  h1 {
+    margin-left: 100%;
+  }
+
+  form label {
+    color: transparent
+  }
+
+  #form-login-button {
+    margin-top: 5%;
+  }
+
+  form input[type="text"],
+  form input[type="password"] {
+    background-color: transparent;
+  }
+  form input[type="text"]::placeholder,
+  form input[type="password"]::placeholder {
+    color: #ccc;
+  }
+
+
+</style>
+
+
+<div class="container">
+  <div class="login-head">
+    <h1>Login</h1>
+  </div>
+  <div class="form-login">
+    <form method="POST">
+      {% csrf_token %} {% bootstrap_form form %}
+      <input id="form-login-button" type="submit" value="Login" class="btn btn-primary" />
+    </form>
+  </div>
+</div>
+{% endblock content %}

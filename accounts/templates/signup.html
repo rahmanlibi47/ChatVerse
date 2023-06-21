@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<style>
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  form label {
+    color: transparent;
+  }
+  .help-block {
+    color: rgb(104, 97, 97);
+  }
+  form li {
+    color: rgb(104, 97, 97);
+  }
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"] {
+    background-color: transparent;
+    color: #fff;
+  }
+  form input[type="text"]::placeholder,
+  form input[type="email"]::placeholder,
+  form input[type="password"]::placeholder {
+    color: #ccc; /* Set the color for the placeholders */
+  }
+  #form-signup-button {
+    margin-top: 2%;
+  }
+</style>
+<div class="container">
+  <form method="POST">
+    {% csrf_token %} {% bootstrap_form form %}
+    <input id="form-signup-button" type="submit" value="Sign Up" class="btn btn-primary" />
+  </form>
+</div>
+{% endblock content %}

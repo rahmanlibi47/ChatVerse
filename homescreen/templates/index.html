@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block title %}ChatVerse{% endblock %}
+
+{% block content %}
+<style>
+  .news-header {
+    margin-top: 10%;
+    padding: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: newsTicker 15s linear infinite;
+    color: white;
+  }
+
+  .news-header span {
+    display: inline-block;
+    padding-right: 2rem;
+  }
+
+  @keyframes newsTicker {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+</style>
+
+<div class="container">
+  <h1 class="news-header">
+    <span>Welcome to ChatVerse. Login to use Video Calling Rooms.</span>
+  </h1>
+  <!-- Music -->
+  <audio autoplay>
+    <source src="/static/xxx.mp3" type="audio/mpeg">  <!-- Add a perfect looped small music -->
+  </audio>
+  
+</div>
+
+{% endblock content %}
