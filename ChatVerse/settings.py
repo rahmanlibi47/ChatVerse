@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'bootstrap3',
     'caller',
-    'django.contrib.sites',
+
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
